@@ -7,7 +7,7 @@ return {
   version = false,
   opts = {
     -- 1. 这里要改为 deepseek 才能让它生效
-    provider = "moonshot",
+    provider = "kimi-cli",
 
     -- 2. 关键修正：这里必须叫 vendors，不能叫 providers
     vendors = {
@@ -30,9 +30,24 @@ return {
         timeout = 30000, -- 超时时间（毫秒）
         extra_request_body = {
           temperature = 0.75,
-          max_tokens = 32768,
+          max_tokens = 8196,
         },
       },
+      gemini = {
+        model = "gemini-3-flash-preview",
+        timeout = 30000, -- 超时时间（毫秒）
+        max_tokens = 8192,
+      },
+    }, -- 定义 ACP 提供商配置
+    acp_providers = {
+      ["kimi-cli"] = {
+        command = "kimi",
+        args = { "acp" },
+      },
+    },
+    mode = "agentic",
+    behaviour = {
+      auto_apply_diffs = false, -- 建议设为 false，修改前让你确认
     },
   },
 
