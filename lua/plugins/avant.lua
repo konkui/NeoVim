@@ -44,6 +44,9 @@ return {
         command = "kimi",
         args = { "acp" },
       },
+      ["claude-internal"] = {
+        command = "claude-internal",
+      },
     },
     mode = "agentic",
     behaviour = {
