@@ -15,3 +15,13 @@ vim.keymap.set("n", "<C-]>", function()
     vim.notify("ctags: no tag found for '" .. word .. "'", vim.log.levels.WARN)
   end
 end, { desc = "Jump to tag (ctags, bypass LSP)" })
+
+-- <leader>tc: 在右侧打开终端并运行 claude-internal
+vim.keymap.set("n", "<leader>tc", function()
+  Snacks.terminal("claude-internal", {
+    win = {
+      position = "right",
+      width = 0.3,
+    },
+  })
+end, { desc = "Terminal: claude-internal (right)" })
