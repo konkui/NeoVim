@@ -22,6 +22,10 @@ vim.keymap.set("n", "<leader>tc", function()
     win = {
       position = "right",
       width = 0.3,
+      height = 0.3,
+      wo = {
+        winfixwidth = true,
+      },
     },
   })
 end, { desc = "Terminal: claude-internal (right)" })
